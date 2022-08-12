@@ -274,12 +274,16 @@ class _CreditCardWidgetState extends State<CreditCardWidget>
                 style: defaultTextStyle,
               ),
             ),
+          const SizedBox(
+            height: 40,
+          ),
           Expanded(
             flex: widget.isChipVisible ? 1 : 0,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: <Widget>[
                 if (widget.isChipVisible)
+
                   Padding(
                     padding: const EdgeInsets.only(left: 16),
                     child: Image.asset(
@@ -302,7 +306,7 @@ class _CreditCardWidgetState extends State<CreditCardWidget>
             ),
           ),
           const SizedBox(
-            height: 80,
+            height: 60,
           ),
           Expanded(
             child: Padding(
@@ -313,7 +317,7 @@ class _CreditCardWidgetState extends State<CreditCardWidget>
                   color: Colors.white,
                   // fontFamily: 'halter',
                   fontFamily: 'Azoft Sans',
-                  fontSize: 18,
+                  fontSize: 25,
                   fontStyle:FontStyle.normal,
 
                   package: 'flutter_credit_card',
@@ -339,7 +343,7 @@ class _CreditCardWidgetState extends State<CreditCardWidget>
                       fontFamily: 'Azoft Sans',
                       fontSize: 18,
                       fontStyle:FontStyle.normal,
-
+                      fontWeight: FontWeight.w800,
                       package: 'flutter_credit_card',
                     ),//widget.textStyle ?? defaultTextStyle,
                   ),
