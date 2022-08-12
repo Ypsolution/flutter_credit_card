@@ -14,12 +14,13 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.1
+  flutter_lints: ^1.0.4
 
 flutter:
   assets:
     - icons/
   fonts:
-    - family: halter
+    - family: Azoft Sans
       fonts:
-        - asset: font/halter.ttf
+        - asset: font/azoft-sans.ttf
+        - asset: font/azoft-sans-bold.ttf

@@ -232,7 +232,8 @@ class _CreditCardWidgetState extends State<CreditCardWidget>
         Theme.of(context).textTheme.headline6!.merge(
               const TextStyle(
                 color: Colors.white,
-                fontFamily: 'halter',
+               // fontFamily: 'halter',
+                fontFamily: 'Azoft Sans',
                 fontSize: 16,
                 package: 'flutter_credit_card',
               ),
@@ -301,58 +302,101 @@ class _CreditCardWidgetState extends State<CreditCardWidget>
             ),
           ),
           const SizedBox(
-            height: 10,
+            height: 80,
           ),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.only(left: 16),
               child: Text(
                 widget.cardNumber.isEmpty ? 'XXXX XXXX XXXX XXXX' : number,
-                style: widget.textStyle ?? defaultTextStyle,
+                style: TextStyle(
+                  color: Colors.white,
+                  // fontFamily: 'halter',
+                  fontFamily: 'Azoft Sans',
+                  fontSize: 18,
+                  fontStyle:FontStyle.normal,
+
+                  package: 'flutter_credit_card',
+                ),//widget.textStyle ?? defaultTextStyle,
               ),
             ),
           ),
-          Expanded(
-            flex: 1,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 16),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(
-                    'VALID\nTHRU',
-                    style: widget.textStyle ??
-                        defaultTextStyle.copyWith(fontSize: 7),
-                    textAlign: TextAlign.center,
+          Row(
+            children:<Widget>[
+              Expanded(
+                // flex:0,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
+                  child: Text(
+                    widget.cardHolderName.isEmpty
+                        ? widget.labelCardHolder
+                        : widget.cardHolderName,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      color: Colors.white,
+                      // fontFamily: 'halter',
+                      fontFamily: 'Azoft Sans',
+                      fontSize: 18,
+                      fontStyle:FontStyle.normal,
+
+                      package: 'flutter_credit_card',
+                    ),//widget.textStyle ?? defaultTextStyle,
                   ),
-                  const SizedBox(width: 5),
-                  Text(
-                    widget.expiryDate.isEmpty
-                        ? widget.labelExpiredDate
-                        : widget.expiryDate,
-                    style: widget.textStyle ?? defaultTextStyle,
-                  ),
-                ],
+                ),
+
               ),
-            ),
-          ),
-          Visibility(
-            visible: widget.isHolderNameVisible,
-            child: Expanded(
-              child: Padding(
-                padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
-                child: Text(
-                  widget.cardHolderName.isEmpty
-                      ? widget.labelCardHolder
-                      : widget.cardHolderName,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: widget.textStyle ?? defaultTextStyle,
+              Expanded(
+                //flex: 1,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        'VALID\nTHRU',
+                        style: TextStyle(
+                          color: Colors.white,
+                          // fontFamily: 'halter',
+                          fontFamily: 'Azoft Sans',
+                          fontSize: 9,
+                          fontStyle:FontStyle.normal,
+
+                          package: 'flutter_credit_card',
+                        ),//widget.textStyle ??
+                          //  defaultTextStyle.copyWith(fontSize: 6),
+                     //   textAlign: TextAlign.center,
+                      ),
+                      const SizedBox(width: 5),
+                      Text(
+                        widget.expiryDate.isEmpty
+                            ? widget.labelExpiredDate
+                            : widget.expiryDate,
+                        style: TextStyle(
+                          color: Colors.white,
+                          // fontFamily: 'halter',
+                          fontFamily: 'Azoft Sans',
+                          fontSize: 18,
+                          fontStyle:FontStyle.normal,
+
+                          package: 'flutter_credit_card',
+                        ),//widget.textStyle ?? defaultTextStyle,
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
+
+  ],
           ),
+
+
+          // Visibility(
+          //   visible: widget.isHolderNameVisible,
+            //child:
+
+          //),
         ],
       ),
     );

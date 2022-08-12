@@ -66,15 +66,15 @@ class MySampleState extends State<MySample> {
                   expiryDate: expiryDate,
                   cardHolderName: cardHolderName,
                   cvvCode: cvvCode,
-                  bankName: 'Axis Bank',
-                  showBackView: isCvvFocused,
-                  obscureCardNumber: true,
-                  obscureCardCvv: true,
+                 // bankName: 'Axis Bank',
+                  showBackView: false,
+                  obscureCardNumber: false,
+                  obscureCardCvv: false,
                   isHolderNameVisible: true,
-                  cardBgColor: Colors.red,
+                  //cardBgColor: Colors.red,
                   backgroundImage:
-                      useBackgroundImage ? 'assets/card_bg.png' : null,
-                  isSwipeGestureEnabled: true,
+                      useBackgroundImage ? 'assets/Mustafeed_premium.png' : null,
+                  isSwipeGestureEnabled: false,
                   onCreditCardWidgetChange:
                       (CreditCardBrand creditCardBrand) {},
                   customCardTypeIcons: <CustomCardTypeIcon>[
