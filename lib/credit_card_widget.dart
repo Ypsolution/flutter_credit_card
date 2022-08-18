@@ -23,6 +23,7 @@ class CreditCardWidget extends StatefulWidget {
       required this.cardHolderName,
       required this.cvvCode,
       required this.showBackView,
+     required this.textColor,
       this.bankName,
       this.animationDuration = const Duration(milliseconds: 500),
       this.height,
@@ -64,7 +65,7 @@ class CreditCardWidget extends StatefulWidget {
   final bool isChipVisible;
   final Glassmorphism? glassmorphismConfig;
   final bool isSwipeGestureEnabled;
-
+  final Color textColor;
   final String labelCardHolder;
   final String labelExpiredDate;
 
@@ -314,7 +315,7 @@ class _CreditCardWidgetState extends State<CreditCardWidget>
               child: Text(
                 widget.cardNumber.isEmpty ? 'XXXX XXXX XXXX XXXX' : number,
                 style: TextStyle(
-                  color: Colors.white,
+                  color: widget.textColor,
                   // fontFamily: 'halter',
                   fontFamily: 'Azoft Sans',
                   fontSize: 25,
@@ -338,7 +339,7 @@ class _CreditCardWidgetState extends State<CreditCardWidget>
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
-                      color: Colors.white,
+                      color: widget.textColor,
                       // fontFamily: 'halter',
                       fontFamily: 'Azoft Sans',
                       fontSize: 18,
@@ -361,7 +362,7 @@ class _CreditCardWidgetState extends State<CreditCardWidget>
                       Text(
                         'VALID\nTHRU',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: widget.textColor,
                           // fontFamily: 'halter',
                           fontFamily: 'Azoft Sans',
                           fontSize: 9,
@@ -378,7 +379,7 @@ class _CreditCardWidgetState extends State<CreditCardWidget>
                             ? widget.labelExpiredDate
                             : widget.expiryDate,
                         style: TextStyle(
-                          color: Colors.white,
+                          color: widget.textColor,
                           // fontFamily: 'halter',
                           fontFamily: 'Azoft Sans',
                           fontSize: 18,

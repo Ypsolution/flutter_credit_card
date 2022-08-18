@@ -72,6 +72,7 @@ class MySampleState extends State<MySample> {
                   obscureCardCvv: false,
                   isHolderNameVisible: true,
                   //cardBgColor: Colors.red,
+                  textColor: Colors.white,
                   backgroundImage:
                       useBackgroundImage ? 'assets/Mustafeed_premium.png' : null,
                   isSwipeGestureEnabled: false,
