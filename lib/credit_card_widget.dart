@@ -294,15 +294,15 @@ class _CreditCardWidgetState extends State<CreditCardWidget>
                     ),
                   ),
                 const Spacer(),
-                Align(
-                  alignment: Alignment.topRight,
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 16, right: 16, top: 8),
-                    child: widget.cardType != null
-                        ? getCardTypeImage(widget.cardType)
-                        : getCardTypeIcon(widget.cardNumber),
-                  ),
-                ),
+                // Align(
+                //   alignment: Alignment.topRight,
+                //   child: Padding(
+                //     padding: const EdgeInsets.only(left: 16, right: 16, top: 8),
+                //     child: widget.cardType != null
+                //         ? getCardTypeImage(widget.cardType)
+                //         : getCardTypeIcon(widget.cardNumber),
+                //   ),
+                // ),
               ],
             ),
           ),
@@ -480,18 +480,18 @@ class _CreditCardWidgetState extends State<CreditCardWidget>
               ),
             ),
           ),
-          Expanded(
-            flex: 2,
-            child: Align(
-              alignment: Alignment.bottomRight,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
-                child: widget.cardType != null
-                    ? getCardTypeImage(widget.cardType)
-                    : getCardTypeIcon(widget.cardNumber),
-              ),
-            ),
-          ),
+          // Expanded(
+          //   flex: 2,
+          //   child: Align(
+          //     alignment: Alignment.bottomRight,
+          //     child: Padding(
+          //       padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
+          //       child: widget.cardType != null
+          //           ? getCardTypeImage(widget.cardType)
+          //           : getCardTypeIcon(widget.cardNumber),
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );
@@ -603,91 +603,91 @@ class _CreditCardWidgetState extends State<CreditCardWidget>
     return cardType;
   }
 
-  Widget getCardTypeImage(CardType? cardType) {
-    final List<CustomCardTypeIcon> customCardTypeIcon =
-        getCustomCardTypeIcon(cardType!);
-    if (customCardTypeIcon.isNotEmpty) {
-      return customCardTypeIcon.first.cardImage;
-    } else {
-      return Image.asset(
-        CardTypeIconAsset[cardType]!,
-        height: 48,
-        width: 48,
-        package: 'flutter_credit_card',
-      );
-    }
-  }
+  // Widget getCardTypeImage(CardType? cardType) {
+  //   final List<CustomCardTypeIcon> customCardTypeIcon =
+  //       getCustomCardTypeIcon(cardType!);
+  //   if (customCardTypeIcon.isNotEmpty) {
+  //     return customCardTypeIcon.first.cardImage;
+  //   } else {
+  //     return Image.asset(
+  //       CardTypeIconAsset[cardType]!,
+  //       height: 48,
+  //       width: 48,
+  //       package: 'flutter_credit_card',
+  //     );
+  //   }
+  // }
 
   // This method returns the icon for the visa card type if found
   // else will return the empty container
-  Widget getCardTypeIcon(String cardNumber) {
-    Widget icon;
-    final CardType ccType = detectCCType(cardNumber);
-    final List<CustomCardTypeIcon> customCardTypeIcon =
-        getCustomCardTypeIcon(ccType);
-    if (customCardTypeIcon.isNotEmpty) {
-      icon = customCardTypeIcon.first.cardImage;
-      isAmex = ccType == CardType.americanExpress;
-    } else {
-      switch (ccType) {
-        case CardType.visa:
-          icon = Image.asset(
-            CardTypeIconAsset[ccType]!,
-            height: 48,
-            width: 48,
-            package: 'flutter_credit_card',
-          );
-          isAmex = false;
-          break;
+  // Widget getCardTypeIcon(String cardNumber) {
+  //   Widget icon;
+  //   final CardType ccType = detectCCType(cardNumber);
+  //   //final List<CustomCardTypeIcon> customCardTypeIcon =
+  //     //  getCustomCardTypeIcon(ccType);
+  //   if (customCardTypeIcon.isNotEmpty) {
+  //     icon = customCardTypeIcon.first.cardImage;
+  //     isAmex = ccType == CardType.americanExpress;
+  //   } else {
+  //     switch (ccType) {
+  //       case CardType.visa:
+  //         icon = Image.asset(
+  //           CardTypeIconAsset[ccType]!,
+  //           height: 48,
+  //           width: 48,
+  //           package: 'flutter_credit_card',
+  //         );
+  //         isAmex = false;
+  //         break;
+  //
+  //       case CardType.americanExpress:
+  //         icon = Image.asset(
+  //           CardTypeIconAsset[ccType]!,
+  //           height: 48,
+  //           width: 48,
+  //           package: 'flutter_credit_card',
+  //         );
+  //         isAmex = true;
+  //         break;
+  //
+  //       case CardType.mastercard:
+  //         icon = Image.asset(
+  //           CardTypeIconAsset[ccType]!,
+  //           height: 48,
+  //           width: 48,
+  //           package: 'flutter_credit_card',
+  //         );
+  //         isAmex = false;
+  //         break;
+  //
+  //       case CardType.discover:
+  //         icon = Image.asset(
+  //           CardTypeIconAsset[ccType]!,
+  //           height: 48,
+  //           width: 48,
+  //           package: 'flutter_credit_card',
+  //         );
+  //         isAmex = false;
+  //         break;
+  //
+  //       default:
+  //         icon = Container(
+  //           height: 48,
+  //           width: 48,
+  //         );
+  //         isAmex = false;
+  //         break;
+  //     }
+  //   }
+  //
+  //   return icon;
+  // }
 
-        case CardType.americanExpress:
-          icon = Image.asset(
-            CardTypeIconAsset[ccType]!,
-            height: 48,
-            width: 48,
-            package: 'flutter_credit_card',
-          );
-          isAmex = true;
-          break;
-
-        case CardType.mastercard:
-          icon = Image.asset(
-            CardTypeIconAsset[ccType]!,
-            height: 48,
-            width: 48,
-            package: 'flutter_credit_card',
-          );
-          isAmex = false;
-          break;
-
-        case CardType.discover:
-          icon = Image.asset(
-            CardTypeIconAsset[ccType]!,
-            height: 48,
-            width: 48,
-            package: 'flutter_credit_card',
-          );
-          isAmex = false;
-          break;
-
-        default:
-          icon = Container(
-            height: 48,
-            width: 48,
-          );
-          isAmex = false;
-          break;
-      }
-    }
-
-    return icon;
-  }
-
-  List<CustomCardTypeIcon> getCustomCardTypeIcon(CardType currentCardType) =>
-      widget.customCardTypeIcons
-          .where((CustomCardTypeIcon element) =>
-              element.cardType == currentCardType)
-          .toList();
+  // List<CustomCardTypeIcon> getCustomCardTypeIcon(CardType currentCardType) =>
+  //     widget.customCardTypeIcons
+  //         .where((CustomCardTypeIcon element) =>
+  //             element.cardType == currentCardType)
+  //         .toList();
 }
 
 class MaskedTextController extends TextEditingController {
